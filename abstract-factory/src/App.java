@@ -8,6 +8,22 @@ public class App {
     private Pilot pilot;
     private Soldier soldier;
 
+    public General getGeneral() {
+        return general;
+    }
+
+    public Officer getOfficer() {
+        return officer;
+    }
+
+    public Pilot getPilot() {
+        return pilot;
+    }
+
+    public Soldier getSoldier() {
+        return soldier;
+    }
+
     public void createArmy(ArmyFactory factory) {
         general = factory.createGeneral();
         officer = factory.createOfficer();
