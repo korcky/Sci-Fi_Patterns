@@ -1,9 +1,9 @@
 /**
  * Created by korcky on 27/01/17.
  */
-public class RepublicGeneral implements General {
+public class CaldariIndustrial implements Industrial {
 
-    static final String DESCRIPTION = "Jedi knight";
+    static final String DESCRIPTION = "Tayra";
 
     @Override
     public String getDescription() {

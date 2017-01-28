@@ -1,9 +1,9 @@
 /**
  * Created by korcky on 27/01/17.
  */
-public class RepublicPilot implements Pilot {
+public class MinmatarBattleship implements Battleship {
 
-    static final String DESCRIPTION = "Clone-pilot";
+    static final String DESCRIPTION = "Maelstrom";
 
     @Override
     public String getDescription() {

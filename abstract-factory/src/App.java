@@ -3,49 +3,49 @@
  */
 public class App {
 
-    private General general;
-    private Officer officer;
-    private Pilot pilot;
-    private Soldier soldier;
+    private Battleship battleship;
+    private Cruiser cruiser;
+    private Industrial industrial;
+    private Frigate frigate;
 
-    public General getGeneral() {
-        return general;
+    public Battleship getBattleship() {
+        return battleship;
     }
 
-    public Officer getOfficer() {
-        return officer;
+    public Cruiser getCruiser() {
+        return cruiser;
     }
 
-    public Pilot getPilot() {
-        return pilot;
+    public Industrial getIndustrial() {
+        return industrial;
     }
 
-    public Soldier getSoldier() {
-        return soldier;
+    public Frigate getFrigate() {
+        return frigate;
     }
 
-    public void createArmy(ArmyFactory factory) {
-        general = factory.createGeneral();
-        officer = factory.createOfficer();
-        pilot = factory.createPilot();
-        soldier = factory.createSoldier();
+    public void createShips(ShipFactory factory) {
+        battleship = factory.createBattleship();
+        cruiser = factory.createCruiser();
+        industrial = factory.createTransport();
+        frigate = factory.createFrigate();
     }
 
     public void getDescription() {
-        System.out.printf(" Generals in army: %s\n Officers in army: %s\n Pilots: in army %s\n Soldiers in army: %s\n",
-                general.getDescription(), officer.getDescription(), pilot.getDescription(), soldier.getDescription());
+        System.out.printf(" Battleships in fleet: %s\n Cruisers in fleet: %s\n Industrials in fleet: %s\n Frigates in fleet: %s\n",
+                battleship.getDescription(), cruiser.getDescription(), industrial.getDescription(), frigate.getDescription());
     }
 
     public static void main(String[] args) {
 
         App app =  new App();
 
-        app.createArmy(new SeparatistArmyFactory());
-        System.out.print("Separatist army:\n");
+        app.createShips(new CaldariShipFactory());
+        System.out.print("Caldari fleet:\n");
         app.getDescription();
 
-        app.createArmy(new RepublicArmyFactory());
-        System.out.print("Republic army:\n");
+        app.createShips(new MinmatarShipFactory());
+        System.out.print("Minmatar fleet:\n");
         app.getDescription();
 
     }

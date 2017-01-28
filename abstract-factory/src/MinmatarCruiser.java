@@ -1,9 +1,9 @@
 /**
  * Created by korcky on 27/01/17.
  */
-public class SeparatistOfficer implements Officer {
+public class MinmatarCruiser implements Cruiser {
 
-    static final String DESCRIPTION = "T-series tactical droid";
+    static final String DESCRIPTION = "Stabber";
 
     @Override
     public String getDescription() {

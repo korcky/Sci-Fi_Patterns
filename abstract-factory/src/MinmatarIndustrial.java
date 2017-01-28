@@ -1,9 +1,9 @@
 /**
  * Created by korcky on 27/01/17.
  */
-public class RepublicSoldier implements Soldier {
+public class MinmatarIndustrial implements Industrial {
 
-    static final String DESCRIPTION = "Clone-soldier";
+    static final String DESCRIPTION = "Wreathe";
 
     @Override
     public String getDescription() {

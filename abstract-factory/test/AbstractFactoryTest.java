@@ -9,56 +9,56 @@ import static org.junit.Assert.assertTrue;
 
 public class AbstractFactoryTest {
 
-    private App republicArmyApp = new App();
-    private App separatistArmyApp = new App();
+    private App caldariFleetApp = new App();
+    private App minmatarFleetApp = new App();
 
     @Before
     public void setUp() {
-        republicArmyApp.createArmy(new RepublicArmyFactory());
-        separatistArmyApp.createArmy(new SeparatistArmyFactory());
+        caldariFleetApp.createShips(new CaldariShipFactory());
+        minmatarFleetApp.createShips(new MinmatarShipFactory());
     }
 
     @Test
-    public void general() {
-        final General republicGeneral = republicArmyApp.getGeneral();
-        assertTrue(republicGeneral instanceof RepublicGeneral);
-        assertEquals(RepublicGeneral.DESCRIPTION, republicGeneral.getDescription());
+    public void battleship() {
+        final Battleship caldariBattleship = caldariFleetApp.getBattleship();
+        assertTrue(caldariBattleship instanceof CaldariBattleship);
+        assertEquals(CaldariBattleship.DESCRIPTION, caldariBattleship.getDescription());
 
-        final General separatistGeneral = separatistArmyApp.getGeneral();
-        assertTrue(separatistGeneral instanceof SeparatistGeneral);
-        assertEquals(SeparatistGeneral.DESCRIPTION, separatistGeneral.getDescription());
+        final Battleship minmatarBattleship = minmatarFleetApp.getBattleship();
+        assertTrue(minmatarBattleship instanceof MinmatarBattleship);
+        assertEquals(MinmatarBattleship.DESCRIPTION, minmatarBattleship.getDescription());
     }
 
     @Test
-    public void officer() {
-        final Officer republicOfficer = republicArmyApp.getOfficer();
-        assertTrue(republicOfficer instanceof RepublicOfficer);
-        assertEquals(RepublicOfficer.DESCRIPTION, republicOfficer.getDescription());
+    public void cruiser() {
+        final Cruiser caldariCruiser = caldariFleetApp.getCruiser();
+        assertTrue(caldariCruiser instanceof CaldariCruiser);
+        assertEquals(CaldariCruiser.DESCRIPTION, caldariCruiser.getDescription());
 
-        final Officer separatistOfficer = separatistArmyApp.getOfficer();
-        assertTrue(separatistOfficer instanceof SeparatistOfficer);
-        assertEquals(SeparatistOfficer.DESCRIPTION, separatistOfficer.getDescription());
+        final Cruiser minmatarCruiser = minmatarFleetApp.getCruiser();
+        assertTrue(minmatarCruiser instanceof MinmatarCruiser);
+        assertEquals(MinmatarCruiser.DESCRIPTION, minmatarCruiser.getDescription());
     }
 
     @Test
-    public void pilot() {
-        final Pilot republicPilot = republicArmyApp.getPilot();
-        assertTrue(republicPilot instanceof RepublicPilot);
-        assertEquals(RepublicPilot.DESCRIPTION, republicPilot.getDescription());
+    public void industrial() {
+        final Industrial caldariIndustrial = caldariFleetApp.getIndustrial();
+        assertTrue(caldariIndustrial instanceof CaldariIndustrial);
+        assertEquals(CaldariIndustrial.DESCRIPTION, caldariIndustrial.getDescription());
 
-        final Pilot separatistPilot = separatistArmyApp.getPilot();
-        assertTrue(separatistPilot instanceof SeparatistPilot);
-        assertEquals(SeparatistPilot.DESCRIPTION, separatistPilot.getDescription());
+        final Industrial minmatarIndustrial = minmatarFleetApp.getIndustrial();
+        assertTrue(minmatarIndustrial instanceof MinmatarIndustrial);
+        assertEquals(MinmatarIndustrial.DESCRIPTION, minmatarIndustrial.getDescription());
     }
 
     @Test
-    public void soldier() {
-        final Soldier republicSoldier = republicArmyApp.getSoldier();
-        assertTrue(republicSoldier instanceof RepublicSoldier);
-        assertEquals(RepublicSoldier.DESCRIPTION, republicSoldier.getDescription());
+    public void frigate() {
+        final Frigate caldariFrigate = caldariFleetApp.getFrigate();
+        assertTrue(caldariFrigate instanceof CaldariFrigate);
+        assertEquals(CaldariFrigate.DESCRIPTION, caldariFrigate.getDescription());
 
-        final Soldier separatistSoldier = separatistArmyApp.getSoldier();
-        assertTrue(separatistSoldier instanceof SeparatistSoldier);
-        assertEquals(SeparatistSoldier.DESCRIPTION, separatistSoldier.getDescription());
+        final Frigate minmatarFrigate = minmatarFleetApp.getFrigate();
+        assertTrue(minmatarFrigate instanceof MinmatarFrigate);
+        assertEquals(MinmatarFrigate.DESCRIPTION, minmatarFrigate.getDescription());
     }
 }

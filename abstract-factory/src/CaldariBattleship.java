@@ -1,9 +1,9 @@
 /**
  * Created by korcky on 27/01/17.
  */
-public class SeparatistGeneral implements General {
+public class CaldariBattleship implements Battleship {
 
-    static final String DESCRIPTION = "Super tactical droid";
+    static final String DESCRIPTION = "Raven";
 
     @Override
     public String getDescription() {
